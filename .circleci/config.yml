@@ -4,8 +4,18 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install
+      - cypress/install:
+          filters:
+            branches:
+              only: 
+                - main
+                - develop
       - cypress/run:
+          filters:
+            branches:
+              only:
+                - main
+                - develop
           requires:
             - cypress/install
           record: true
