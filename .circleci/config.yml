@@ -4,6 +4,11 @@ orbs:
 workflows:
   build:
     jobs:
+      filters:
+        branches:
+          only:
+            - main
+            - develop
       - cypress/install
       - cypress/run:
           requires:
