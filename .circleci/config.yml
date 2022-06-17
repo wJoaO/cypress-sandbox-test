@@ -3,12 +3,12 @@ orbs:
   cypress: cypress-io/cypress@1
 workflows:
   build:
+    filters:
+      branches:
+        only:
+          - main
+          - develop
     jobs:
-      filters:
-        branches:
-          only:
-            - main
-            - develop
       - cypress/install
       - cypress/run:
           requires:
